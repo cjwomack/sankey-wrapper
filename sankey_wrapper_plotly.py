@@ -56,7 +56,7 @@ def plot_sankey(df_links):
         ))])
 
     fig.update_layout(title_text="Example", font_size=10)
-    fig.show()
+    fig.write_html('sankey.html', auto_open=True)
 
 
 def to_rgba_str(rgb_arr, alpha=None):

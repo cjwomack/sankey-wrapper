@@ -1,0 +1,4 @@
+plotly==5.1.0
+pandas>=1.0.3
+matplotlib
+numpy
