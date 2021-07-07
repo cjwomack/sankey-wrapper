@@ -13,7 +13,7 @@ def add_link(source, target, value, label=""):
     return new_link
 
 
-def get_nodes(df_links, colormap="Paired"):
+def get_nodes(df_links, colormap="Spectral"):
     nodes = pd.concat([df_links["source"], df_links["target"]]).unique()
 
     cmap = plt.get_cmap(colormap)
@@ -33,8 +33,8 @@ def plot_sankey(df_links):
     df_links = df_links.replace(enc_label)
 
     dec_color = dict(zip(df_nodes["index"], df_nodes["color"]))
-    dec_color = dict((k, to_rgba_str(v, 0.5)) for k, v in dec_color.items())
-    df_links["color"] = df_links["source"].copy()
+    dec_color = dict((k, to_rgba_str(v, 0.7)) for k, v in dec_color.items())
+    df_links["color"] = df_links["target"].copy()
     df_links["color"] = df_links["color"].replace(dec_color)
 
     df_nodes["color"] = df_nodes["color"].apply(to_rgba_str)
@@ -42,8 +42,7 @@ def plot_sankey(df_links):
     fig = go.Figure(data=[go.Sankey(
         node=dict(
             pad=25,
-            thickness=25,
-            line=dict(color="black", width=0.5),
+            thickness=20,
             label=df_nodes["label"],
             color=df_nodes["color"]
         ),
