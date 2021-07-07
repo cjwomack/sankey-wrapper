@@ -1,0 +1,12 @@
+source,target,value,label
+A,C,8,A to C
+A,D,5,A to D
+B,C,7,B to C
+B,D,2,B to D
+B,E,2,B to E
+C,E,5,C to E
+C,F,3,C to F
+C,G,4,C to G
+C,H,3,C to H
+D,G,3,D to G
+D,F,4,D to F
